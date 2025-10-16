@@ -37,7 +37,7 @@ export const Deals = [
   },
   {
     title: "Smart Projector Mini",
-    description: "Compact HD projector, perfect for movie nights.",
+    description: "Compact projector perfect for movies.",
     src: "https://res.cloudinary.com/dxekfksjf/image/upload/v1760632884/oji-mini-Portable-Projector-tripod_fjy44x.jpg",
     alt: "Mini projector displaying on wall",
   },
