@@ -1,5 +1,8 @@
 import Hero from '@/components/home-page/hero'
 import Categorieslist from '@/components/home-page/categorieslist'
+import Featuredcollection from '@/components/home-page/featuredcollection'
+import Dealsandoffers from '@/components/home-page/dealsandoffers'
+import CustomersFavorite from '@/components/home-page/customersfavorite'
 
 
 export default function Home() {
@@ -8,6 +11,9 @@ export default function Home() {
     <main>
       <Hero />
       <Categorieslist />
+      <Featuredcollection />
+      <Dealsandoffers />
+      <CustomersFavorite />
     </main>
   )
 }

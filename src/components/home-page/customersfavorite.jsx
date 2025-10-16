@@ -2,18 +2,18 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import MaxwidthContainer from "../sharing/maxwidth-container"
 import { Button } from "../ui/button"
 import Image from "next/image"
-import { Gadgets } from "../constants/featuredcollection"
+import { Favorites } from "../constants/customersfav"
 import { Star } from "lucide-react"
 
-export default function Featuredcollection() {
+export default function CustomersFavorite() {
   return (
     <section>
         <MaxwidthContainer className=" py-20 space-y-10">
         <h2 className="text-3xl md:text-4xl font-bold text-[#0E290E]">
-            Featured Collections/What's New 
+            Customers' Favorites
         </h2>
         <div className="flex gap-4 overflow-x-auto scrollbar-hide">
-            {Gadgets.map((item, index) => {
+            {Favorites.map((item, index) => {
                 return (
                     <Card key={index} className="w-fit">
                 <CardContent className="space-y-1">

@@ -1,19 +1,19 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import MaxwidthContainer from "../sharing/maxwidth-container"
 import { Button } from "../ui/button"
-import Image from "next/image"
-import { Gadgets } from "../constants/featuredcollection"
+import { Deals } from "../constants/dealsandoffers"
 import { Star } from "lucide-react"
+import Image from "next/image"
 
-export default function Featuredcollection() {
+export default function Dealsandoffers() {
   return (
     <section>
         <MaxwidthContainer className=" py-20 space-y-10">
         <h2 className="text-3xl md:text-4xl font-bold text-[#0E290E]">
-            Featured Collections/What's New 
+            Deals & Offers 
         </h2>
         <div className="flex gap-4 overflow-x-auto scrollbar-hide">
-            {Gadgets.map((item, index) => {
+            {Deals.map((item, index) => {
                 return (
                     <Card key={index} className="w-fit">
                 <CardContent className="space-y-1">
@@ -35,7 +35,7 @@ export default function Featuredcollection() {
                         <Star className="w-4 h-4 inline fill-[#50BB42] stroke-[#50BB42]"/>
                         <Star className="w-4 h-4 inline fill-[#50BB42] stroke-[#50BB42]"/>
                         </div>
-                        <p>(172)</p>
+                        <p>(92)</p>
                     </div>
                 </CardContent>
                 <CardFooter>

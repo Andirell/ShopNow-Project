@@ -20,7 +20,7 @@ export default function Categorieslist() {
                       src={category.src}
                       width={300}
                       height={200}
-                      alt="Computer"
+                      alt={category.alt}
                       className=" object-cover rounded-2xl"
                     />
                   </div>
