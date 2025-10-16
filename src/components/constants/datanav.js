@@ -1,6 +1,6 @@
 export const Navs = [
-    { title: "Home", href: "" },
-  { title: "About", href: "about" },
-  { title: "Properties", href: "properties" },
-  { title: "Contact", href: "contact" }
+    { title: "Categories", href: "categories" },
+  { title: "Deals", href: "deals" },
+  { title: "What's New ", href: "what's new" },
+  { title: "Delivery", href: "delivery" }
 ];
