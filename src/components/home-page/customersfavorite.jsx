@@ -35,7 +35,7 @@ export default function CustomersFavorite() {
                         <Star className="w-4 h-4 inline fill-[#50BB42] stroke-[#50BB42]"/>
                         <Star className="w-4 h-4 inline fill-[#50BB42] stroke-[#50BB42]"/>
                         </div>
-                        <p>(172)</p>
+                        <p>(273)</p>
                     </div>
                 </CardContent>
                 <CardFooter>
