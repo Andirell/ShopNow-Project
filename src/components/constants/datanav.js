@@ -1,6 +1,6 @@
 export const Navs = [
-    { title: "Categories", href: "categories" },
+  { title: "Products", href: "products" },
   { title: "Deals", href: "deals" },
   { title: "What's New ", href: "what's new" },
-  { title: "Delivery", href: "delivery" }
+  { title: "About", href: "about" }
 ];

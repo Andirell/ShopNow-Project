@@ -3,6 +3,8 @@ import Categorieslist from '@/components/home-page/categorieslist'
 import Featuredcollection from '@/components/home-page/featuredcollection'
 import Dealsandoffers from '@/components/home-page/dealsandoffers'
 import CustomersFavorite from '@/components/home-page/customersfavorite'
+import Services from '@/components/home-page/services'
+
 
 
 export default function Home() {
@@ -14,6 +16,7 @@ export default function Home() {
       <Featuredcollection />
       <Dealsandoffers />
       <CustomersFavorite />
+      <Services />
     </main>
   )
 }

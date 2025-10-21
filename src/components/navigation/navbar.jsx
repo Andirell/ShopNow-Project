@@ -34,7 +34,7 @@ export default function Navbar() {
           </Link>
 
           <nav className="">
-            <ul className="flex md:gap-8 text-lg font-medium">
+            <ul className="flex md:gap-6 text-lg font-medium">
               {Navs.map((link, index) => {
                 return (
                   <li key={index}>
