@@ -1,5 +1,4 @@
 export const differentProducts = [
-
   {
     id: 1,
     title: "UltraSlim Laptop X13",
@@ -8,6 +7,8 @@ export const differentProducts = [
     alt: "Slim laptop with backlit keyboard",
     category: "Computing & Tablets",
     price: "$899",
+    details: "Overview: The UltraSlim Laptop X13 is engineered for professionals and students on the move, combining powerful internals with a featherlight, durable chassis that withstands the rigors of daily travel while delivering exceptional performance.",
+        
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ export const differentProducts = [
     alt: "Tablet with stylus on desk",
     category: "Computing & Tablets",
     price: "$649",
+    details: "Overview: The Pro Tablet 11 Max blurs the line between tablet and laptop, offering a stunning 120Hz display, powerful chipset, and compatibility with a full suite of creative accessories for professionals and creatives alike.",
   },
   {
     id: 3,
@@ -26,6 +28,8 @@ export const differentProducts = [
     alt: "Ergonomic mouse with RGB lighting",
     category: "Computing & Tablets",
     price: "$59",
+    details: "Overview: Say goodbye to wrist strain with this vertically designed ergonomic mouse that promotes a natural handshake grip, reducing pressure on your wrist and forearm during long work sessions with near-silent clicking.",
+        
   },
   {
     id: 4,
@@ -35,6 +39,8 @@ export const differentProducts = [
     alt: "RGB keyboard with backlight",
     category: "Computing & Tablets",
     price: "$129",
+    details: "Overview: Elevate your typing and gaming experience with genuine mechanical switches for tactile feedback and fully customizable per-key RGB lighting that synchronizes with major games and applications for an immersive experience.",
+        
   },
   {
     id: 5,
@@ -44,6 +50,7 @@ export const differentProducts = [
     alt: "Cooling pad with blue LED fans",
     category: "Computing & Tablets",
     price: "$39",
+    details: "Overview: An essential accessory for gamers and power users, this cooling pad features dual high-RPM fans that actively pull heat away from your laptop, preventing thermal throttling and maintaining peak performance during intensive tasks.",
   },
   {
     id: 6,
@@ -53,6 +60,8 @@ export const differentProducts = [
     alt: "Charging dock with multiple devices",
     category: "Computing & Tablets",
     price: "$89",
+    details: "Overview: Declutter your desk with this 3-in-1 charging station that provides dedicated fast-charging spots for your Qi-enabled phone, compatible earbuds, and smartwatch simultaneously with a sleek, space-saving design.",
+      
   },
   {
     id: 7,
@@ -62,6 +71,8 @@ export const differentProducts = [
     alt: "Tablet case with attached keyboard",
     category: "Computing & Tablets",
     price: "$45",
+    details: "Overview: Transform your tablet into a productive laptop replacement with this versatile case featuring a detachable Bluetooth keyboard with well-spaced keys and multi-touch trackpad while providing full-body protection.",
+      
   },
   {
     id: 8,
@@ -71,6 +82,8 @@ export const differentProducts = [
     alt: "Webcam mounted on monitor",
     category: "Computing & Tablets",
     price: "$75",
+    details: "Overview: Look your best in every video call with sharp, true-to-life 1080p video at 60fps, even in low-light conditions, featuring dual stereo microphones with noise reduction to ensure your voice is heard clearly.",
+     
   },
   {
     id: 9,
@@ -80,6 +93,8 @@ export const differentProducts = [
     alt: "USB-C Hub with multiple ports",
     category: "Computing & Tablets",
     price: "$49",
+    details: "Overview: Unlock the full potential of your modern laptop with this compact adapter that instantly adds essential ports for connecting monitors, transferring files from cameras, using wired peripherals, and more through a single cable.",
+      
   },
   {
     id: 10,
@@ -89,6 +104,8 @@ export const differentProducts = [
     alt: "Sleek silver external SSD drive",
     category: "Computing & Tablets",
     price: "$159",
+    details: "Overview: Experience blistering transfer speeds with this NVMe-based external SSD in a rugged, compact chassis, perfect for storing large media libraries, editing video directly from the drive, and creating fast backups.",
+      
   },
   {
     id: 11,
@@ -98,6 +115,8 @@ export const differentProducts = [
     alt: "Stylus pen resting beside tablet",
     category: "Computing & Tablets",
     price: "$39",
+    details: "Overview: Unleash your creativity with pixel-perfect precision, palm rejection, and tilt sensitivity that feels as natural as pen on paper, ideal for artists, designers, students, and anyone who prefers handwriting.",
+      
   },
   {
     id: 12,
@@ -107,9 +126,9 @@ export const differentProducts = [
     alt: "Laptop stand on work desk",
     category: "Computing & Tablets",
     price: "$49",
+    details: "Overview: Improve your posture and boost your laptop's cooling with this sturdy, height-adjustable stand that elevates your screen to eye level, reducing neck and back strain while promoting better air circulation.",
+     
   },
-
-
   {
     id: 13,
     title: "Wireless Headphones X1",
@@ -118,6 +137,8 @@ export const differentProducts = [
     alt: "Black over-ear wireless headphones",
     category: "Music Gadgets",
     price: "$199",
+    details: "Overview: Immerse yourself in pure audio bliss with advanced active noise cancellation that blocks out the world, coupled with premium sound quality and exceptional comfort for long listening sessions.",
+      
   },
   {
     id: 14,
@@ -127,6 +148,8 @@ export const differentProducts = [
     alt: "Portable Bluetooth speaker",
     category: "Music Gadgets",
     price: "$69",
+    details: "Overview: Despite its compact size, this portable speaker delivers surprisingly powerful 360-degree sound with deep bass, making it the perfect companion for outdoor adventures, parties, and travel.",
+
   },
   {
     id: 15,
@@ -136,6 +159,8 @@ export const differentProducts = [
     alt: "Wireless earbuds",
     category: "Music Gadgets",
     price: "$149",
+    details: "Overview: Experience true wireless freedom with advanced hybrid active noise cancellation that adapts to your environment, delivering crystal-clear audio and call quality in a compact, comfortable design.",
+
   },
   {
     id: 16,
@@ -145,6 +170,7 @@ export const differentProducts = [
     alt: "Soundbar placed below TV",
     category: "Music Gadgets",
     price: "$279",
+    details: "Overview: Transform your TV viewing experience with this premium soundbar featuring Dolby Audio, built-in subwoofer for rich bass, and smart voice control compatibility for seamless integration into your entertainment system.",
   },
   {
     id: 17,
@@ -154,6 +180,8 @@ export const differentProducts = [
     alt: "Vinyl turntable playing record",
     category: "Music Gadgets",
     price: "$249",
+    details: "Overview: Rediscover the warm, authentic sound of vinyl with this modern turntable that combines vintage aesthetics with contemporary features like Bluetooth connectivity and built-in speakers for the best of both worlds.",
+     
   },
   {
     id: 18,
@@ -163,6 +191,8 @@ export const differentProducts = [
     alt: "Studio mic on adjustable stand",
     category: "Music Gadgets",
     price: "$199",
+    details: "Overview: Achieve professional-grade audio recording with this complete podcasting bundle featuring a studio condenser microphone, shock mount, pop filter, and adjustable boom arm for crystal-clear vocals and instruments.",
+      
   },
   {
     id: 19,
@@ -172,6 +202,8 @@ export const differentProducts = [
     alt: "DJ console with knobs and sliders",
     category: "Music Gadgets",
     price: "$499",
+    details: "Overview: Take your DJ performances to the next level with this professional 4-channel mixer featuring high-resolution color displays, multi-effects processors, and seamless software integration for both live sets and studio production.",
+      
   },
   {
     id: 20,
@@ -181,6 +213,8 @@ export const differentProducts = [
     alt: "Smart glasses with built-in speakers",
     category: "Music Gadgets",
     price: "$299",
+    details: "Overview: Experience audio in a revolutionary way with these stylish smart glasses that feature open-ear speakers for immersive sound while keeping you aware of your surroundings, plus discreet notifications and voice assistant access.",
+      
   },
   {
     id: 21,
@@ -190,6 +224,8 @@ export const differentProducts = [
     alt: "Bass-heavy over-ear headphones",
     category: "Music Gadgets",
     price: "$129",
+    details: "Overview: Designed for bass lovers, these headphones deliver powerful, punchy low frequencies without sacrificing clarity in mids and highs, featuring extra-large drivers and enhanced bass ports for an immersive listening experience.",
+      
   },
   {
     id: 22,
@@ -199,6 +235,8 @@ export const differentProducts = [
     alt: "Cap with hidden Bluetooth module",
     category: "Music Gadgets",
     price: "$79",
+    details: "Overview: The ultimate fusion of fashion and technology, this smart cap features discreet built-in bone conduction speakers in the brim and a microphone for hands-free calls and music while maintaining a completely normal appearance.",
+      
   },
   {
     id: 23,
@@ -208,6 +246,8 @@ export const differentProducts = [
     alt: "Wireless karaoke microphone",
     category: "Music Gadgets",
     price: "$89",
+    details: "Overview: Turn any space into a karaoke stage with this all-in-one wireless microphone featuring built-in speakers, multiple voice effects, echo control, and Bluetooth connectivity for backing tracks from your phone.",
+    
   },
   {
     id: 24,
@@ -217,9 +257,9 @@ export const differentProducts = [
     alt: "Colorful LED Bluetooth speaker",
     category: "Music Gadgets",
     price: "$99",
+    details: "Overview: Create an immersive audio-visual experience with this smart speaker featuring 360-degree RGB LED lights that sync to your music's rhythm, multiple lighting modes, and surprisingly powerful sound for its size.",
+     
   },
-
- 
   {
     id: 25,
     title: "4K Action Camera Pro",
@@ -228,6 +268,8 @@ export const differentProducts = [
     alt: "Compact 4K action camera",
     category: "Camera & Lenses",
     price: "$249",
+    details: "Overview: Built for adventurers, this rugged 4K action camera captures stunning stabilized footage in any condition with advanced electronic image stabilization, waterproof design, and multiple mounting options for any activity.",
+      
   },
   {
     id: 26,
@@ -237,6 +279,8 @@ export const differentProducts = [
     alt: "Professional drone flying over field",
     category: "Camera & Lenses",
     price: "$599",
+    details: "Overview: Capture breathtaking aerial cinematography with this professional drone featuring a 4K camera on a 3-axis gimbal, GPS follow-me mode, obstacle avoidance, and up to 30 minutes of flight time for stunning overhead perspectives.",
+      
   },
   {
     id: 27,
@@ -246,6 +290,8 @@ export const differentProducts = [
     alt: "Security camera mounted indoors",
     category: "Camera & Lenses",
     price: "$129",
+    details: "Overview: Monitor your home 24/7 with this smart security camera featuring 1080p HD video, color night vision, two-way audio, person detection, and seamless integration with your smart home ecosystem for complete peace of mind.",
+     
   },
   {
     id: 28,
@@ -255,6 +301,8 @@ export const differentProducts = [
     alt: "Camera tripod stand",
     category: "Camera & Lenses",
     price: "$59",
+    details: "Overview: Achieve rock-solid stability for your photography and videography with this professional aluminum tripod featuring quick-release plates, multi-angle center column, and reversible legs for low-angle shots.",
+  
   },
   {
     id: 29,
@@ -264,6 +312,8 @@ export const differentProducts = [
     alt: "LED ring light setup",
     category: "Camera & Lenses",
     price: "$79",
+    details: "Overview: Create professional-quality lighting for streaming, video calls, and content creation with this complete ring light kit featuring adjustable color temperature, brightness control, and versatile mounting options.",
+     
   },
   {
     id: 30,
@@ -273,6 +323,8 @@ export const differentProducts = [
     alt: "Assorted camera lenses",
     category: "Camera & Lenses",
     price: "$199",
+    details: "Overview: Expand your creative possibilities with this comprehensive 3-in-1 lens kit featuring wide-angle, macro, and telephoto attachments that easily clip onto your smartphone or compatible cameras for professional results.",
+    
   },
   {
     id: 31,
@@ -282,6 +334,8 @@ export const differentProducts = [
     alt: "Camera backpack with gear",
     category: "Camera & Lenses",
     price: "$89",
+    details: "Overview: Safely transport and organize all your photography equipment with this professional camera backpack featuring customizable padded dividers, weather-resistant construction, and dedicated compartments for laptops and accessories.",
+     
   },
   {
     id: 32,
@@ -291,6 +345,8 @@ export const differentProducts = [
     alt: "Small Bluetooth camera remote",
     category: "Camera & Lenses",
     price: "$25",
+    details: "Overview: Eliminate camera shake and capture perfect group photos with this compact Bluetooth remote shutter that works with smartphones, DSLRs, and mirrorless cameras from up to 30 feet away.",
+     
   },
   {
     id: 33,
@@ -300,6 +356,7 @@ export const differentProducts = [
     alt: "Lens cleaning tools and cloths",
     category: "Camera & Lenses",
     price: "$29",
+    details: "Overview: Maintain your valuable camera equipment in pristine condition with this professional 12-piece cleaning kit featuring lens pens, microfiber cloths, cleaning solution, and specialized tools for sensors and delicate surfaces.",
   },
   {
     id: 34,
@@ -309,6 +366,8 @@ export const differentProducts = [
     alt: "Set of camera mounts",
     category: "Camera & Lenses",
     price: "$49",
+    details: "Overview: Capture unique perspectives with this comprehensive 15-piece mounting kit designed for action cameras, featuring suction cups, helmet mounts, chest harness, and various adapters for any adventure scenario.",
+      
   },
   {
     id: 35,
@@ -318,6 +377,8 @@ export const differentProducts = [
     alt: "Mini projector on tripod",
     category: "Camera & Lenses",
     price: "$299",
+    details: "Overview: Transform any surface into a 100-inch cinema with this ultra-portable smart projector featuring built-in Android TV, Wi-Fi connectivity, and surprisingly bright LED projection in a compact, travel-friendly design.",
+    
   },
   {
     id: 36,
@@ -327,8 +388,9 @@ export const differentProducts = [
     alt: "Handheld gimbal stabilizer for camera",
     category: "Camera & Lenses",
     price: "$179",
+    details: "Overview: Achieve Hollywood-quality smooth footage with this 3-axis motorized gimbal stabilizer that automatically counteracts shakes and jitters, featuring multiple follow modes, object tracking, and intuitive controls.",
+      
   },
-
   {
     id: 37,
     title: "Smart Home Hub Pro",
@@ -337,6 +399,8 @@ export const differentProducts = [
     alt: "Smart home hub on desk",
     category: "Smart Home & Accessories",
     price: "$149",
+    details: "Overview: Serve as the central brain of your smart home ecosystem, this hub connects and coordinates all your compatible devices with support for multiple protocols and built-in voice assistant for seamless control.",
+      
   },
   {
     id: 38,
@@ -346,6 +410,8 @@ export const differentProducts = [
     alt: "Colorful smart bulbs",
     category: "Smart Home & Accessories",
     price: "$39",
+    details: "Overview: Transform your home's ambiance with this 4-pack of Wi-Fi enabled smart bulbs featuring 16 million colors, tunable white light, scheduling capabilities, and compatibility with all major voice assistants.",
+     
   },
   {
     id: 39,
@@ -355,6 +421,8 @@ export const differentProducts = [
     alt: "Smart plug adapter",
     category: "Smart Home & Accessories",
     price: "$29",
+    details: "Overview: Instantly make any appliance smart with this compact Wi-Fi plug that allows you to control lamps, fans, and electronics remotely via app or voice, with energy monitoring and scheduling features.",
+     
   },
   {
     id: 40,
@@ -364,6 +432,8 @@ export const differentProducts = [
     alt: "Smart doorbell camera",
     category: "Smart Home & Accessories",
     price: "$179",
+    details: "Overview: See, hear, and speak to visitors from anywhere with this advanced video doorbell featuring 1536p HD video, package detection, advanced motion detection, and weather-resistant construction.",
+    
   },
   {
     id: 41,
@@ -373,6 +443,7 @@ export const differentProducts = [
     alt: "White air purifier device",
     category: "Smart Home & Accessories",
     price: "$199",
+    details: "Overview: Breathe easier with this smart air purifier that automatically detects and removes allergens, pollutants, and odors while providing real-time air quality reports and voice control compatibility.",
   },
   {
     id: 42,
@@ -382,6 +453,7 @@ export const differentProducts = [
     alt: "Smart robotic vacuum cleaner",
     category: "Smart Home & Accessories",
     price: "$349",
+    details: "Overview: Keep your floors effortlessly clean with this intelligent robot vacuum featuring LiDAR navigation for precise mapping, auto-empty station, mopping capability, and voice control integration.",
   },
   {
     id: 43,
@@ -391,6 +463,8 @@ export const differentProducts = [
     alt: "Smart curtain automation motor",
     category: "Smart Home & Accessories",
     price: "$129",
+    details: "Overview: Transform your existing curtains into smart window treatments with this easy-to-install motor that enables automatic opening/closing based on schedules, sun position, or voice commands.",
+    
   },
   {
     id: 44,
@@ -400,6 +474,8 @@ export const differentProducts = [
     alt: "Smart thermostat on wall",
     category: "Smart Home & Accessories",
     price: "$229",
+    details: "Overview: Save energy and stay comfortable with this learning thermostat that automatically adapts to your schedule, provides energy usage reports, and can be controlled from anywhere via smartphone app.",
+    
   },
   {
     id: 45,
@@ -409,6 +485,8 @@ export const differentProducts = [
     alt: "Smart diffuser emitting mist",
     category: "Smart Home & Accessories",
     price: "$69",
+    details: "Overview: Create the perfect ambiance with this Wi-Fi enabled aroma diffuser featuring customizable LED mood lighting, adjustable mist output, scheduling capabilities, and compatibility with essential oils.",
+      
   },
   {
     id: 46,
@@ -418,6 +496,8 @@ export const differentProducts = [
     alt: "Smart alarm clock with LED display",
     category: "Smart Home & Accessories",
     price: "$89",
+    details: "Overview: Transform your wake-up routine with this smart alarm clock featuring simulated sunrise, customizable nature sounds, sleep tracking, and integration with your smart home for a gentle, natural awakening.",
+     
   },
   {
     id: 47,
@@ -427,6 +507,8 @@ export const differentProducts = [
     alt: "Smart security sensors kit",
     category: "Smart Home & Accessories",
     price: "$199",
+    details: "Overview: Protect your home with this comprehensive DIY security system featuring door/window sensors, motion detectors, and a hub that provides professional monitoring options and instant mobile alerts.",
+  
   },
   {
     id: 48,
@@ -436,6 +518,8 @@ export const differentProducts = [
     alt: "Voice assistant smart speaker",
     category: "Smart Home & Accessories",
     price: "$149",
+    details: "Overview: Enjoy premium sound quality combined with advanced voice assistant capabilities in this smart speaker that serves as both an entertainment hub and smart home controller with far-field voice recognition.",
+      
   },
   {
     id: 49,
@@ -445,6 +529,8 @@ export const differentProducts = [
     alt: "Smart 4K television on wall",
     category: "TV & Home Appliances",
     price: "$699",
+    details: "Overview: Immerse yourself in breathtaking 4K entertainment with this feature-packed smart TV featuring Quantum Dot technology for vibrant colors, Dolby Vision HDR, and a powerful smart platform with all major streaming services.",
+   
   },
   {
     id: 50,
@@ -454,6 +540,8 @@ export const differentProducts = [
     alt: "Mini projector with tripod",
     category: "TV & Home Appliances",
     price: "$299",
+    details: "Overview: Create a big-screen experience anywhere with this ultra-portable smart projector featuring native 1080p resolution, built-in Android TV, auto keystone correction, and surprisingly powerful speakers in a compact design.",
+     
   },
   {
     id: 51,
@@ -463,6 +551,8 @@ export const differentProducts = [
     alt: "Smart refrigerator with touchscreen",
     category: "TV & Home Appliances",
     price: "$1,299",
+    details: "Overview: Revolutionize your kitchen with this French door smart refrigerator featuring a large interactive touchscreen, internal cameras to see contents remotely, voice control, and family organization features.",
+     
   },
   {
     id: 52,
@@ -472,6 +562,8 @@ export const differentProducts = [
     alt: "Modern washing machine",
     category: "TV & Home Appliances",
     price: "$899",
+    details: "Overview: Experience the future of laundry with this smart front-load washer featuring TurboWash technology that cleans full loads in just 30 minutes, steam sanitization, and remote control via smartphone app.",
+      
   },
   {
     id: 53,
@@ -481,6 +573,8 @@ export const differentProducts = [
     alt: "Smart microwave oven",
     category: "TV & Home Appliances",
     price: "$279",
+    details: "Overview: Simplify meal preparation with this smart over-the-range microwave featuring sensor cooking technology that automatically adjusts time and power, voice control compatibility, and built-in ventilation system.",
+     
   },
   {
     id: 54,
@@ -490,6 +584,8 @@ export const differentProducts = [
     alt: "Wall-mounted air conditioner",
     category: "TV & Home Appliances",
     price: "$649",
+    details: "Overview: Stay comfortably cool with this ultra-quiet smart inverter air conditioner featuring Wi-Fi connectivity for remote control, energy-saving modes, and precise temperature maintenance with minimal noise disruption.",
+     
   },
   {
     id: 55,
@@ -499,6 +595,8 @@ export const differentProducts = [
     alt: "Smart ceiling fan",
     category: "TV & Home Appliances",
     price: "$229",
+    details: "Overview: Enhance your home's comfort and ambiance with this smart ceiling fan featuring integrated dimmable LED lighting, reversible blades for seasonal use, and full app and voice control capabilities.",
+     
   },
   {
     id: 56,
@@ -508,6 +606,8 @@ export const differentProducts = [
     alt: "Soundbar with subwoofer",
     category: "TV & Home Appliances",
     price: "$499",
+    details: "Overview: Transform your living room into a cinematic experience with this complete 5.1.2 channel Dolby Atmos soundbar system featuring wireless subwoofer, rear satellite speakers, and upward-firing drivers for true overhead sound.",
+
   },
   {
     id: 57,
@@ -517,6 +617,8 @@ export const differentProducts = [
     alt: "Robot vacuum cleaner",
     category: "TV & Home Appliances",
     price: "$399",
+    details: "Overview: Maintain pristine floors effortlessly with this advanced robot vacuum featuring LiDAR navigation for efficient cleaning paths, self-emptying base, mopping capability, and comprehensive smart home integration.",
+
   },
   {
     id: 58,
@@ -526,6 +628,8 @@ export const differentProducts = [
     alt: "Digital air fryer",
     category: "TV & Home Appliances",
     price: "$159",
+    details: "Overview: Enjoy crispy, delicious fried foods with up to 75% less fat using this large-capacity smart air fryer featuring digital touchscreen controls, preset cooking programs, and Wi-Fi connectivity for remote monitoring.",
+      
   },
   {
     id: 59,
@@ -535,6 +639,8 @@ export const differentProducts = [
     alt: "Smart humidifier",
     category: "TV & Home Appliances",
     price: "$99",
+    details: "Overview: Maintain optimal humidity levels for health and comfort with this smart humidifier featuring app and voice control, essential oil diffusion, color-changing mood lighting, and automatic humidity sensing.",
+     
   },
   {
     id: 60,
@@ -544,6 +650,8 @@ export const differentProducts = [
     alt: "Compact dishwasher on counter",
     category: "TV & Home Appliances",
     price: "$549",
+    details: "Overview: Perfect for small kitchens and households, this 18-inch smart dishwasher delivers full-size cleaning performance with ultra-quiet operation, Wi-Fi connectivity, and specialized cycles for every need.",
+   
   },
   {
     id: 61,
@@ -553,6 +661,8 @@ export const differentProducts = [
     alt: "Over-ear noise cancelling headphones",
     category: "Audio Gadgets",
     price: "$249",
+    details: "Overview: Immerse yourself in pure audio with industry-leading noise cancellation technology that adapts to your environment, coupled with premium drivers for rich, detailed sound and all-day comfort.",
+      
   },
   {
     id: 62,
@@ -562,6 +672,8 @@ export const differentProducts = [
     alt: "Portable Bluetooth speaker",
     category: "Audio Gadgets",
     price: "$129",
+    details: "Overview: Experience powerful, room-filling sound from this portable speaker featuring dual passive radiators for deep bass, 360-degree audio projection, and rugged, waterproof design for any adventure.",
+    
   },
   {
     id: 63,
@@ -571,6 +683,8 @@ export const differentProducts = [
     alt: "Studio microphone and stand",
     category: "Audio Gadgets",
     price: "$179",
+    details: "Overview: Achieve broadcast-quality audio with this complete podcasting bundle featuring a large-diaphragm condenser microphone, shock mount, pop filter, and professional boom arm for crystal-clear recordings.",
+    
   },
   {
     id: 64,
@@ -580,6 +694,8 @@ export const differentProducts = [
     alt: "Wireless earbuds with case",
     category: "Audio Gadgets",
     price: "$79",
+    details:"Overview: Enjoy true wireless freedom with these lightweight earbuds featuring secure-fit design for active lifestyles, clear call quality, and reliable connectivity in a compact, pocket-friendly charging case.",
+
   },
   {
     id: 65,
@@ -589,6 +705,8 @@ export const differentProducts = [
     alt: "Soundbar under TV",
     category: "Audio Gadgets",
     price: "$399",
+    details: "Overview: Transform your TV audio with this complete 5.1 channel soundbar system featuring Dolby Audio, wireless subwoofer, rear satellite speakers, and multiple connectivity options for an immersive home theater experience.",
+      
   },
   {
     id: 66,
@@ -598,6 +716,8 @@ export const differentProducts = [
     alt: "Turntable playing record",
     category: "Audio Gadgets",
     price: "$229",
+    details: "Overview: Experience the warm, authentic sound of vinyl with this modern turntable that blends vintage aesthetics with contemporary features like Bluetooth connectivity, built-in speakers, and USB recording capability.",
+     
   },
   {
     id: 67,
@@ -607,6 +727,8 @@ export const differentProducts = [
     alt: "Pair of smart speakers",
     category: "Audio Gadgets",
     price: "$199",
+    details: "Overview: Create a rich stereo soundstage with this pair of smart speakers featuring advanced voice recognition, premium audio quality, and seamless integration as the control center for your smart home ecosystem.",
+      
   },
   {
     id: 68,
@@ -616,6 +738,8 @@ export const differentProducts = [
     alt: "Clip-on microphone",
     category: "Audio Gadgets",
     price: "$59",
+    details: "Overview: Achieve professional-quality audio for videos, podcasts, and interviews with this compact lavalier microphone featuring omnidirectional pickup, windscreen, and universal compatibility with smartphones and cameras.",
+      
   },
   {
     id: 69,
@@ -625,6 +749,8 @@ export const differentProducts = [
     alt: "Bluetooth audio receiver",
     category: "Audio Gadgets",
     price: "$49",
+    details: 
+      "Overview: Modernize your existing audio equipment by adding high-quality Bluetooth connectivity to speakers, stereos, and cars with this compact receiver featuring aptX HD support for superior audio quality.",
   },
   {
     id: 70,
@@ -634,6 +760,7 @@ export const differentProducts = [
     alt: "Conference speakerphone device",
     category: "Audio Gadgets",
     price: "$149",
+    details: "Overview: Elevate your conference calls with this professional speakerphone featuring 360-degree microphone pickup, noise cancellation, and exceptional audio quality for crystal-clear meetings from anywhere.",
   },
   {
     id: 71,
@@ -643,6 +770,9 @@ export const differentProducts = [
     alt: "Wireless headset with mic boom",
     category: "Audio Gadgets",
     price: "$119",
+    details: 
+      "Overview: Stay connected with exceptional audio quality for both listening and speaking with this wireless headset featuring a noise-cancelling boom microphone, all-day comfort, and multi-device connectivity.",
+      
   },
   {
     id: 72,
@@ -652,6 +782,8 @@ export const differentProducts = [
     alt: "Portable karaoke microphone",
     category: "Audio Gadgets",
     price: "$89",
-  },
-
+    details: 
+      "Overview: Turn any gathering into a karaoke party with this all-in-one wireless microphone featuring built-in speakers, multiple voice effects, adjustable echo, and Bluetooth connectivity for backing tracks.",
+    
+  }
 ];
