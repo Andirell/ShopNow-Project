@@ -2,7 +2,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import MaxwidthContainer from "../sharing/maxwidth-container"
 import { Button } from "../ui/button"
 import Image from "next/image"
-import { Gadgets } from "../constants/featuredcollection"
+import { differentProducts } from "../constants/product"
 import { Star } from "lucide-react"
 
 export default function Featuredcollection() {
@@ -13,7 +13,7 @@ export default function Featuredcollection() {
             Featured Collections/What's New 
         </h2>
         <div className="flex gap-4 overflow-x-auto scrollbar-hide">
-            {Gadgets.map((item, index) => {
+            {differentProducts.map((item, index) => {
                 return (
                     <Card key={index} className="w-fit">
                 <CardContent className="space-y-1">

@@ -2,11 +2,13 @@
 
 import ProductCard from "@/components/sharing/productcard";
 import { differentProducts } from "@/components/constants/product";
+import MaxwidthContainer from "@/components/sharing/maxwidth-container";
 
 export default function ProductsPage() {
   return (
     <section className="p-10">
-      <h1 className="text-3xl font-bold mb-8 text-[#0E290E]">
+      <MaxwidthContainer>
+        <h1 className="text-3xl font-bold mb-8 text-[#0E290E]">
         Explore Our Products
       </h1>
 
@@ -15,6 +17,7 @@ export default function ProductsPage() {
           <ProductCard key={index} product={item} />
         ))}
       </div>
+      </MaxwidthContainer>
     </section>
   );
 }

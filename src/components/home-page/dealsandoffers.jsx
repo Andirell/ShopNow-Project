@@ -1,9 +1,9 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import MaxwidthContainer from "../sharing/maxwidth-container"
 import { Button } from "../ui/button"
-import { Deals } from "../constants/dealsandoffers"
 import { Star } from "lucide-react"
 import Image from "next/image"
+import { differentProducts } from "../constants/product"
 
 export default function Dealsandoffers() {
   return (
@@ -13,7 +13,7 @@ export default function Dealsandoffers() {
             Deals & Offers 
         </h2>
         <div className="flex gap-4 overflow-x-auto scrollbar-hide">
-            {Deals.map((item, index) => {
+            {differentProducts.map((item, index) => {
                 return (
                     <Card key={index} className="w-fit">
                 <CardContent className="space-y-1">

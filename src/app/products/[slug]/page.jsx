@@ -24,7 +24,7 @@ export default function Page({ params }) {
   }
 
   return (
-    <section className="">
+    <section>
       <MaxwidthContainer className="py-12">
         <div className="flex md:flex justify-center gap-12 p-6 border border-amber-950 rounded-2xl">
           <div>
@@ -36,7 +36,7 @@ export default function Page({ params }) {
               className="object-cover rounded-2xl"
             />
           </div>
-          <div className="flex flex-col w-120  p-8 gap-4 align-center">
+          <div className="flex flex-col w-120  px-6 py-4 gap-4 align-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl break-words text-[#3C1414]">
               {product.title}
             </h1>

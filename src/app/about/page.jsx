@@ -1,15 +1,15 @@
 "use client";
 import Image from "next/image";
-import React from "react";
-import MaxWidthContainer from "@/components/things-to-share/max-width-container";
+import MaxwidthContainer from "@/components/sharing/maxwidth-container";
+
 
 export default function About() {
   return (
     <section className="py-20 bg-gray-50 text-gray-800">
-      <MaxWidthContainer className="grid md:grid-cols-2 gap-12 items-center px-4">
-        <div>
+      <MaxwidthContainer className="grid md:grid-cols-2 gap-12 items-center px-4">
+        <div className="flex flex-col gap-2">
           <h1 className="text-4xl font-bold mb-4 text-gray-900">
-            About <span className="text-blue-600">ShopNow</span>
+            About <span className="text-[#0E290E]">ShopNow</span>
           </h1>
           <h2 className="text-lg font-semibold text-gray-600 mb-6">
             Redefining the way you discover and shop for gadgets.
@@ -30,20 +30,22 @@ export default function About() {
             At ShopNow, we are not just selling gadgets — we are helping you stay
             connected, productive, and inspired in a fast-moving world.
           </p>
-          <p className="text-blue-600 font-semibold italic">
+          <p className="text-[#0E290E] font-semibold italic">
             💡 Shop smart. Shop better. ShopNow.
           </p>
         </div>
 
-        <div className="relative h-[400px] w-full">
+        <div className="relative h-[500px] w-[600px] flex">
           <Image
-            src="https://res.cloudinary.com/dxekfksjf/image/upload/v1760551754/about_gadgets_image.png"
+            src="https://res.cloudinary.com/dxekfksjf/image/upload/v1761142944/modern-workspace-setup-stockcake_kespi7.jpg"
             alt="Modern gadgets arranged neatly on a workspace desk"
-            fill
-            className="object-cover rounded-2xl shadow-md"
+            height={600}
+            width={600}
+  
+            className="object-cover rounded-2xl "
           />
         </div>
-      </MaxWidthContainer>
+      </MaxwidthContainer>
     </section>
   );
 }

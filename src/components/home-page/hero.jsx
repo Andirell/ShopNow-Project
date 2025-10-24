@@ -1,5 +1,6 @@
 import MaxwidthContainer from "../sharing/maxwidth-container";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -14,9 +15,12 @@ export default function Hero() {
               Discover the best products at unbeatable prices. Shop now and
               experience the difference!
             </p>
-            <Button className="bg-[#0E290E] text-white p-6 rounded-3xl cursor-pointer hover:bg-[#0c230c] transition">
-              Explore Deals
-            </Button>
+            <Link href="/products">
+                <Button className="bg-[#0E290E] text-white p-6 rounded-3xl cursor-pointer hover:bg-[#0c230c] transition">
+                    Explore Deals
+                </Button>
+            
+            </Link>
           </div>
           <div>
             <img
