@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import MaxwidthContainer from "../sharing/maxwidth-container";
 import {
@@ -10,6 +12,9 @@ import {
 import { Navs } from "../constants/datanav";
 
 export default function Navbar() {
+const [searchTerm, setSearchTerm] = useState("");
+
+
   return (
     <header className="bg-[white]">
       <nav className="bg-[#0E290E] text-white flex md:justify-between py-3 px-3 items-center gap-16 ">
@@ -47,10 +52,25 @@ export default function Navbar() {
         </div>
 
         <div className="flex gap-8">
-          <div className="flex gap-20 items-center cursor-pointer border py-2 px-4 rounded-3xl bg-[#e3dede]  hover:shadow-md">
-            <p className="text-gray-400 text-sm">Search Product</p>
-            <Search className="w-6 h-6 text-gray-400 cursor-pointer" />
-          </div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault(); 
+              window.location.href = `/products?search=${searchTerm}`;
+            }}
+            className="flex items-center border py-2 px-4 rounded-3xl bg-[#e3dede] hover:shadow-md w-full sm:w-1/2"
+          >
+            <input
+              type="text"
+              placeholder="Search Product"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="bg-transparent outline-none flex-1 text-sm text-gray-700 placeholder-gray-400"
+            />
+            <button type="submit">
+              <Search className="w-5 h-5 text-gray-400" />
+            </button>
+          </form>
+          
           <div className="flex gap-8">
             <div className="flex gap-2 items-center cursor-pointer">
               <CircleUser className="w-8 h-8 text-gray-600 cursor-pointer" />
