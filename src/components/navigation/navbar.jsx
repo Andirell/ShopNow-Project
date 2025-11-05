@@ -76,10 +76,10 @@ const [searchTerm, setSearchTerm] = useState("");
               <CircleUser className="w-8 h-8 text-gray-600 cursor-pointer" />
               <p>Account</p>
             </div>
-            <div className="flex gap-2 items-center cursor-pointer">
+            <Link href={"/cart"} className="flex gap-2 items-center cursor-pointer">
               <ShoppingCart className="w-8 h-8 text-gray-600 cursor-pointer" />
               <p>Cart</p>
-            </div>
+            </Link>
           </div>
         </div>
       </MaxwidthContainer>

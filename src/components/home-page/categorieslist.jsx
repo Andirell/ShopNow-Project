@@ -2,6 +2,7 @@ import MaxwidthContainer from "../sharing/maxwidth-container";
 import { Categories } from "../constants/datacategories";
 import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Categorieslist() {
   return (
@@ -11,9 +12,14 @@ export default function Categorieslist() {
           Top Categories To Explore
         </h2>
         <div className="flex gap-4 overflow-x-auto scrollbar-hide">
+      
           {Categories.map((category, index) => {
             return (
-              <Card key={index} className="w-fit">
+              <Link 
+               key={index}
+                href={`/products?category=${encodeURIComponent(category.title)}`}
+                className= "block">
+              <Card className="w-fit cursor-pointer transition-transform hover:scale-105 hover:shadow-lg">
                 <CardContent className="text-2xl font-semibold space-y-4 ">
                   <div className="relative h-[300px] w-[250px] flex">
                     <Image
@@ -30,6 +36,7 @@ export default function Categorieslist() {
                   <p className="text-sm font-light">{category.description}</p>
                 </CardContent>
               </Card>
+            </Link>
             );
           })}
         </div>

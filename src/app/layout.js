@@ -4,6 +4,7 @@ import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/navigation/footer";
 
 
+
 const urbanist = Urbanist({
   subsets: ["latin"],
   variable: "--font-urbanist",

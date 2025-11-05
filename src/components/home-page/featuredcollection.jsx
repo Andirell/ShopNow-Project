@@ -4,6 +4,7 @@ import { Button } from "../ui/button"
 import Image from "next/image"
 import { differentProducts } from "../constants/product"
 import { Star } from "lucide-react"
+import Link from "next/link"
 
 export default function Featuredcollection() {
   return (
@@ -15,6 +16,10 @@ export default function Featuredcollection() {
         <div className="flex gap-4 overflow-x-auto scrollbar-hide">
             {differentProducts.map((item, index) => {
                 return (
+                    <Link 
+                        key={index}
+                        href={`/products?category=${encodeURIComponent(item.category)}`}
+                className= "block">
                     <Card key={index} className="w-fit">
                 <CardContent className="space-y-1">
                     <div className="relative h-[300px] w-[250px] flex">
@@ -42,6 +47,7 @@ export default function Featuredcollection() {
                     <Button className="bg-[#0E290E] text-white p-4 rounded-3xl cursor-pointer hover:bg-[#0c230c] transition">Add to Cart</Button>
                 </CardFooter>
             </Card>
+            </Link>
              );
           })}
         </div>

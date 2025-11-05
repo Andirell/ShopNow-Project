@@ -5,28 +5,71 @@ import { differentProducts } from "@/components/constants/product";
 import MaxwidthContainer from "@/components/sharing/maxwidth-container";
 
 
+
 export default function ProductsPage() {
   const [searchTerm, setSearchTerm] = useState("");
 const [filteredProducts, setFilteredProducts] = useState(differentProducts);
+const [selectedCategory, setSelectedCategory] = useState("All");
+
+const categories = [ "All", ...new Set(differentProducts.map((item) => item.category))];
 
    useEffect(() => {
+    if (typeof window === "undefined"){
     const params = new URLSearchParams(window.location.search);
     const search = params.get("search")?.toLowerCase() || "";
-    setSearchTerm(search);
+    const category = params.get("category") || "All";
 
-     const results = differentProducts.filter((item) =>
-      item.title.toLowerCase().includes(search)
-    );
+
+    setSearchTerm(search);
+    setSelectedCategory(category);
+       
+    let results = differentProducts;
+
+    if (search) {
+      results = results.filter((item) =>
+        item.title.toLowerCase().includes(search)
+      );
+    }
+
+    if (category !== "All") {
+      results = results.filter((item) => item.category === category);
+    }
     setFilteredProducts(results);
-  }, []);
+  }}, []);
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    if (category === "All") {
+      setFilteredProducts(differentProducts);
+    } else {
+      const results = differentProducts.filter(
+        (item) => item.category === category
+      )
+      setFilteredProducts(results);
+    }};
 
   return (
-
     <section className="p-10">
       <MaxwidthContainer>
         <h1 className="text-3xl font-bold mb-8 text-[#0E290E]">
         Explore Our Products
       </h1>
+
+      <div className="flex flex-wrap gap-4 mb-10">
+          {categories.map((category, index) => (
+            <button
+              key={index}
+              onClick={() => handleCategoryChange(category)}
+              className={`px-5 py-2 rounded-full border ${
+                selectedCategory === category
+                  ? "bg-[#0E290E] text-white"
+                  : "bg-white text-[#0E290E] border-[#0E290E] hover:bg-[#e6efe6]"
+              } transition`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       
       {searchTerm && (
         <p className="mb-6 text-lg">
@@ -46,4 +89,4 @@ const [filteredProducts, setFilteredProducts] = useState(differentProducts);
       </MaxwidthContainer>
     </section>
   );
-}
+};
