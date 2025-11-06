@@ -18,7 +18,7 @@ export default function Featuredcollection() {
                 return (
                     <Link 
                         key={index}
-                        href={`/products?category=${encodeURIComponent(item.category)}`}
+                          href={`/products/${item.title.toLowerCase().replace(/\s+/g, "-")}-${item.id}`}
                 className= "block">
                     <Card key={index} className="w-fit">
                 <CardContent className="space-y-1">

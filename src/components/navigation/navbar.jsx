@@ -13,26 +13,27 @@ import { Navs } from "../constants/datanav";
 
 export default function Navbar() {
 const [searchTerm, setSearchTerm] = useState("");
+const [menuOpen, setMenuOpen] = useState(false);
 
 
   return (
     <header className="bg-[white]">
-      <nav className="bg-[#0E290E] text-white flex md:justify-between py-3 px-3 items-center gap-16 ">
-        <div className="flex gap-2 items-center cursor-pointer">
-          <Phone className="w-6 h-6 inline mr-2 ml-4" />
+      <nav className="bg-[#0E290E] text-white flex flex-col sm:flex-row sm:justify-between sm:items-center py-2 px-4 text-sm gap-2 ">
+        <div className="flex gap-2 items-center justify-center sm:justify-start cursor-pointer">
+          <Phone className="w-4 h-4 inline mr-2 ml-4" />
           <p>+2349057479783</p>
         </div>
-        <div className="flex gap-4 items-center cursor-pointer">
+        <div className="flex flex-wrap gap-2 items-center justify-center text-center text-[14px] cursor-pointer">
           <p className="">Free Delivery on Orders Over $50</p>
-          <p>I</p>
+         <span className="hidden sm:inline">|</span>
           <p>Shop now</p>
         </div>
-        <div className="flex items-center cursor-pointer">
+        <div className=" hidden sm:flex items-center cursor-pointer">
           <p>English</p>
           <ChevronDown className="w-4 h-4 inline ml-1" />
         </div>
       </nav>
-      <MaxwidthContainer className="flex md:justify-between items-center text-black py-4">
+      <MaxwidthContainer className="flex justify-between items-center p-4 sm:px-6 lg:px-8 text-black">
         <div className="flex gap-8 items-center">
           <Link href="/">
             <h1 className=" text-[#0E290E] text-5xl cursor-pointer">ShopNow</h1>

@@ -8,7 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 
 export default function Page({ params }) {
-  const { slug } = use(params);
+  const resolvedParams = use(params);
+const slug = resolvedParams.slug;
+
   const differentProduct = differentProducts.find(
     (p) => p.id.toString() === slug.split("-").pop()
   );
