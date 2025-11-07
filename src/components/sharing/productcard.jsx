@@ -42,7 +42,7 @@ export default function ProductCard({ product }) {
               </div>
             </CardContent>
             <CardFooter>
-              <Button className="bg-[#0E290E] text-white p-4 rounded-3xl cursor-pointer hover:bg-[#0c230c] transition">
+              <Button className="bg-[#0E290E] w-full text-white p-4 rounded-3xl cursor-pointer hover:bg-[#0c230c] transition">
                 Add to Cart
               </Button>
             </CardFooter>
