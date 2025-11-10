@@ -13,6 +13,7 @@ export default function ProductCard({ product }) {
     e.preventDefault();
     e.stopPropagation();
     addToCart(product);
+    alert(`${product.title} added to cart!`)
   };
 
   return (
