@@ -12,14 +12,15 @@ import {
   X,
 } from "lucide-react";
 import { Navs } from "../constants/datanav";
+import { useCart } from "@/contexts/cartcontext";
 
 export default function Navbar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const { getCartItemsCount } = useCart();
 
   return (
     <header className="bg-white border-b border-gray-200">
-      {/* Top Info Bar */}
       <nav className="bg-[#0E290E] text-white flex flex-col sm:flex-row sm:justify-between sm:items-center py-2 px-4 text-sm gap-2">
         <div className="flex gap-2 items-center justify-center sm:justify-start cursor-pointer">
           <Phone className="w-4 h-4 inline mr-2 ml-4" />
@@ -37,7 +38,6 @@ export default function Navbar() {
       </nav>
 
       <MaxwidthContainer className="flex justify-between items-center py-4 px-4 sm:px-6 lg:px-8 text-black relative">
-        {/* Mobile */}
         <div className="flex md:hidden justify-between w-full items-center">
           <Link href="/">
             <h1 className="text-[#0E290E] text-3xl font-bold text-center flex-1">
@@ -53,7 +53,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Tablet */}
         <div className="hidden md:flex lg:hidden justify-between w-full items-center">
           <div className="flex gap-3 items-center">
             <button onClick={() => setMenuOpen(!menuOpen)}>
@@ -73,14 +72,18 @@ export default function Navbar() {
               <CircleUser className="w-6 h-6 text-gray-600" />
               <p className="text-[15px]">Account</p>
             </div>
-            <Link href="/cart" className="flex gap-2 items-center cursor-pointer">
+            <Link href="/cart" className="flex gap-2 items-center cursor-pointer relative">
               <ShoppingCart className="w-6 h-6 text-gray-600" />
               <p className="text-[15px]">Cart</p>
+              {getCartItemsCount() > 0 && (
+                <span className="absolute -top-2 -right-2 bg-[#0E290E] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {getCartItemsCount()}
+                </span>
+              )}
             </Link>
           </div>
         </div>
 
-        {/* Desktop */}
         <div className="hidden lg:flex justify-between items-center w-full">
           <div className="flex items-center gap-8">
             <Link href="/">
@@ -122,15 +125,19 @@ export default function Navbar() {
                 <CircleUser className="w-7 h-7 text-gray-600" />
                 <p>Account</p>
               </div>
-              <Link href="/cart" className="flex gap-2 items-center cursor-pointer">
+              <Link href="/cart" className="flex gap-2 items-center cursor-pointer relative">
                 <ShoppingCart className="w-7 h-7 text-gray-600" />
                 <p>Cart</p>
+                {getCartItemsCount() > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-[#0E290E] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {getCartItemsCount()}
+                  </span>
+                )}
               </Link>
             </div>
           </div>
         </div>
 
-        {/* ✅ Menu Dropdown (now visible on mobile + tablet) */}
         {menuOpen && (
           <div className="absolute top-full left-0 w-full bg-white shadow-lg border-t z-50 lg:hidden">
             <div className="flex flex-col items-center gap-4 py-6 text-lg font-medium text-[#0E290E]">
@@ -155,11 +162,16 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/cart"
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 relative"
                 onClick={() => setMenuOpen(false)}
               >
                 <ShoppingCart className="w-5 h-5" />
                 <p>Cart</p>
+                {getCartItemsCount() > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-[#0E290E] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    {getCartItemsCount()}
+                  </span>
+                )}
               </Link>
             </div>
           </div>
