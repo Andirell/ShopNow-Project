@@ -1,20 +1,12 @@
 "use client";
 import Image from "next/image";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import Link from "next/link";
-import { useCart } from "@/contexts/cartcontext";
+import AddToCart from "@/components/sharing/addtocart";
 
 export default function ProductCard({ product }) {
-  const { addToCart } = useCart();
 
-  const handleAddToCart = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    addToCart(product);
-    alert(`${product.title} added to cart!`)
-  };
 
   return (
     <Card className="w-fit">
@@ -44,10 +36,8 @@ export default function ProductCard({ product }) {
         </CardContent>
       </Link>
       <CardFooter>
-        <Button onClick={handleAddToCart} className="bg-[#0E290E] w-full text-white p-4 rounded-3xl hover:bg-[#0c230c] transition">
-          Add to Cart
-        </Button>
-      </CardFooter>
+    <AddToCart product={product} className="w-full" />
+</CardFooter>
     </Card>
   );
 }

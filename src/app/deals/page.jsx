@@ -8,8 +8,16 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import Link from "next/link";
+import { useCart } from "@/contexts/cartcontext";
 
 export default function Deals() {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    alert(`${item.title} added to cart!`);
+  };
+
   return (
     <section>
       <MaxwidthContainer className="py-10 md:py-16 lg:py-20 space-y-6 md:space-y-8 lg:space-y-10">
@@ -57,7 +65,10 @@ export default function Deals() {
                 </Link>
 
                 <CardFooter className="p-4 md:p-6 pt-0">
-                  <Button className="w-full bg-[#0E290E] text-white p-3 md:p-4 rounded-3xl cursor-pointer hover:bg-[#0c230c] transition text-sm sm:text-base">
+                  <Button
+                    onClick={() => handleAddToCart(item)}
+                    className="w-full bg-[#0E290E] text-white p-3 md:p-4 rounded-3xl cursor-pointer hover:bg-[#0c230c] transition text-sm sm:text-base"
+                  >
                     Add to Cart
                   </Button>
                 </CardFooter>

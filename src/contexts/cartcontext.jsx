@@ -1,14 +1,36 @@
 "use client";
-import { createContext, useContext, useState } from "react";
-
+import { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
 export function CartProvider({ children }) { 
     const [cartItems, setCartItems] = useState([]);
 
+    useEffect(() => {
+        const savedCart = localStorage.getItem('shopnow-cart');
+        if (savedCart) {
+            setCartItems(JSON.parse(savedCart));
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('shopnow-cart', JSON.stringify(cartItems));
+    }, [cartItems]);
+
     const addToCart = (product) => {
-        setCartItems((prevItems) => [...prevItems, product]);
+        setCartItems((prevItems) => {
+            const existingItem = prevItems.find(item => item.id === product.id);
+            
+            if (existingItem) {
+                return prevItems.map(item =>
+                    item.id === product.id
+                        ? { ...item, quantity: (item.quantity || 1) + 1 }
+                        : item
+                );
+            } else {
+                return [...prevItems, { ...product, quantity: 1 }];
+            }
+        });
     };
 
     const removeFromCart = (productId) => {
@@ -22,8 +44,8 @@ export function CartProvider({ children }) {
     };
 
     const getCartItemsCount = () => {
-    return cartItems.length;
-};
+        return cartItems.reduce((total, item) => total + (item.quantity || 1), 0);
+    };
 
     return ( 
         <CartContext.Provider
@@ -33,9 +55,11 @@ export function CartProvider({ children }) {
         </CartContext.Provider>
     );
 }
+
 export function useCart() {
-    return useContext(CartContext);
+    const context = useContext(CartContext);
+    if (!context) {
+        throw new Error("useCart must be used within a CartProvider");
+    }
+    return context;
 }
-
-export default CartContext;
-
