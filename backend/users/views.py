@@ -41,6 +41,7 @@ class LoginView(TokenObtainPairView):
 class MeView(APIView):
     """GET /api/users/me/  — return the currently authenticated user."""
     permission_classes = [permissions.IsAuthenticated]
+    serializer_class = UserSerializer
 
     def get(self, request):
         return Response(UserSerializer(request.user).data)
