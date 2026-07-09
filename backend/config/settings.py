@@ -113,6 +113,12 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
 }
 
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'ShopNow Backend API',
+    'DESCRIPTION': 'REST API for products, carts, checkout, orders, payments, and reviews.',
+    'VERSION': '1.0.0',
+}
+
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 

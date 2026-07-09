@@ -39,8 +39,8 @@ class CartSerializer(serializers.ModelSerializer):
         fields = ['id', 'user', 'items', 'total_price', 'item_count']
         read_only_fields = ['user']
 
-    def get_total_price(self, obj):
+    def get_total_price(self, obj) -> str:
         return str(obj.total_price)
 
-    def get_item_count(self, obj):
+    def get_item_count(self, obj) -> int:
         return obj.item_count

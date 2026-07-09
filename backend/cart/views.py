@@ -21,6 +21,7 @@ class MyCartView(APIView):
     DELETE /api/cart/       → clear the cart
     """
     permission_classes = [permissions.IsAuthenticated]
+    serializer_class = CartSerializer
 
     def get(self, request):
         cart = _get_or_create_cart(request.user)
@@ -32,13 +33,12 @@ class MyCartView(APIView):
         return Response(CartSerializer(cart).data, status=status.HTTP_200_OK)
 
 
-class CartItemView(APIView):
+class CartItemCreateView(APIView):
     """
-    POST   /api/cart/items/        → {product_id, quantity}  (add or merge)
-    PATCH  /api/cart/items/<id>/   → {quantity}              (update)
-    DELETE /api/cart/items/<id>/   → remove item
+    POST /api/cart/items/ → {product_id, quantity}  (add or merge)
     """
     permission_classes = [permissions.IsAuthenticated]
+    serializer_class = CartItemSerializer
 
     def post(self, request):
         cart = _get_or_create_cart(request.user)
@@ -52,21 +52,53 @@ class CartItemView(APIView):
             defaults={'quantity': quantity},
         )
         if not created:
+            if item.quantity + quantity > product.stock:
+                return Response(
+                    {'detail': f'{product.name} only has {product.stock} in stock.'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
             item.quantity += quantity
             item.save()
+        elif quantity > product.stock:
+            item.delete()
+            return Response(
+                {'detail': f'{product.name} only has {product.stock} in stock.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
 
         return Response(CartSerializer(cart).data, status=status.HTTP_201_CREATED)
+
+
+class CartItemDetailView(APIView):
+    """
+    PATCH  /api/cart/items/<id>/ → {quantity}  (update)
+    DELETE /api/cart/items/<id>/ → remove item
+    """
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = CartItemSerializer
 
     def patch(self, request, item_id):
         cart = _get_or_create_cart(request.user)
         item = get_object_or_404(CartItem, id=item_id, cart=cart)
         quantity = request.data.get('quantity')
-        if quantity is None or int(quantity) < 1:
+        try:
+            quantity = int(quantity)
+        except (TypeError, ValueError):
             return Response(
                 {'detail': 'quantity must be >= 1'},
                 status=status.HTTP_400_BAD_REQUEST,
             )
-        item.quantity = int(quantity)
+        if quantity < 1:
+            return Response(
+                {'detail': 'quantity must be >= 1'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        if quantity > item.product.stock:
+            return Response(
+                {'detail': f'{item.product.name} only has {item.product.stock} in stock.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        item.quantity = quantity
         item.save()
         return Response(CartSerializer(cart).data)
 
