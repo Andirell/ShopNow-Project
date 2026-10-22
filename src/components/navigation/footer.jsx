@@ -31,8 +31,8 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">Shop</h3>
           <ul className="space-y-4 text-sm">
-            <li><Link href="#" className="hover:text-white">What's New</Link></li>
-            <li><Link href="#" className="hover:text-white">Deals & Offers</Link></li>
+            <li><Link href="/products" className="hover:text-white">What's New</Link></li>
+            <li><Link href="/deals" className="hover:text-white">Deals & Offers</Link></li>
             <li><Link href="#" className="hover:text-white">Customer's Favorite</Link></li>
           </ul>
         </div>
@@ -40,16 +40,16 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">Support</h3>
           <ul className="space-y-4 text-sm">
-            <li><Link href="#" className="hover:text-white">Help Center</Link></li>
-            <li><Link href="#" className="hover:text-white">Track Order</Link></li>
-            <li><Link href="#" className="hover:text-white">Contact Us</Link></li>
+            <li><Link href="/contact" className="hover:text-white">Help Center</Link></li>
+            <li><Link href="/account" className="hover:text-white">Track Order</Link></li>
+            <li><Link href="/contact" className="hover:text-white">Contact Us</Link></li>
           </ul>
         </div>
 
         <div>
           <h3 className="text-lg font-semibold text-white mb-3">Company</h3>
           <ul className="space-y-4 text-sm">
-            <li><Link href="#" className="hover:text-white">About Us</Link></li>
+            <li><Link href="/about" className="hover:text-white">About Us</Link></li>
             <li><Link href="#" className="hover:text-white">Privacy Policy</Link></li>
             <li><Link href="#" className="hover:text-white">Terms & Conditions</Link></li>
           </ul>

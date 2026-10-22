@@ -1,17 +1,22 @@
 "use client";
 
-import React from "react";
+import { useEffect, useState } from "react";
 import MaxwidthContainer from "@/components/sharing/maxwidth-container";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { differentProducts } from "@/components/constants/product";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import Link from "next/link";
 import { useCart } from "@/contexts/cartcontext";
+import { getProducts, formatPrice } from "@/lib/api";
 
 export default function Deals() {
   const { addToCart } = useCart();
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getProducts().then(setProducts);
+  }, []);
 
   const handleAddToCart = (item) => {
     addToCart(item);
@@ -26,14 +31,10 @@ export default function Deals() {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-          {differentProducts.map((item) => {
-            const slug = `${item.title
-              .toLowerCase()
-              .replace(/[\s]+/g, "-")}-${item.id}`;
-
+          {products.map((item) => {
             return (
               <Card key={item.id} className="w-full overflow-hidden">
-                <Link href={`/deals/${slug}`}>
+                <Link href={`/deals/${item.slug}`}>
                   <CardContent className="space-y-3 p-4 md:p-6 cursor-pointer">
                     <div className="relative w-full h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] rounded-xl overflow-hidden">
                       <Image
@@ -61,6 +62,7 @@ export default function Deals() {
                       </div>
                       <p className="text-sm sm:text-base font-bold">(92)</p>
                     </div>
+                    <p className="text-lg font-bold">{formatPrice(item.price)}</p>
                   </CardContent>
                 </Link>
 

@@ -13,11 +13,17 @@ import {
 } from "lucide-react";
 import { Navs } from "../constants/datanav";
 import { useCart } from "@/contexts/cartcontext";
+import { useAuth } from "@/contexts/authcontext";
 
 export default function Navbar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const { getCartItemsCount } = useCart();
+  const { user } = useAuth();
+
+  // Logged in: go to the account page and show their first name
+  const accountLink = user ? "/account" : "/login";
+  const accountLabel = user ? user.first_name : "Account";
 
   return (
     <header className="bg-white border-b border-gray-200">
@@ -68,10 +74,10 @@ export default function Navbar() {
           </div>
 
           <div className="flex gap-6 items-center">
-            <div className="flex gap-2 items-center cursor-pointer">
+            <Link href={accountLink} className="flex gap-2 items-center cursor-pointer">
               <CircleUser className="w-6 h-6 text-gray-600" />
-              <p className="text-[15px]">Account</p>
-            </div>
+              <p className="text-[15px]">{accountLabel}</p>
+            </Link>
             <Link href="/cart" className="flex gap-2 items-center cursor-pointer relative">
               <ShoppingCart className="w-6 h-6 text-gray-600" />
               <p className="text-[15px]">Cart</p>
@@ -104,7 +110,7 @@ export default function Navbar() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                window.location.href = `/products?search=${searchTerm}`;
+                window.location.href = `/products?search=${encodeURIComponent(searchTerm)}`;
               }}
               className="flex items-center border py-2 px-4 rounded-3xl bg-[#e3dede] hover:shadow-md w-72"
             >
@@ -121,10 +127,10 @@ export default function Navbar() {
             </form>
 
             <div className="flex gap-4 items-center">
-              <div className="flex gap-2 items-center cursor-pointer">
+              <Link href={accountLink} className="flex gap-2 items-center cursor-pointer">
                 <CircleUser className="w-7 h-7 text-gray-600" />
-                <p>Account</p>
-              </div>
+                <p>{accountLabel}</p>
+              </Link>
               <Link href="/cart" className="flex gap-2 items-center cursor-pointer relative">
                 <ShoppingCart className="w-7 h-7 text-gray-600" />
                 <p>Cart</p>
@@ -153,12 +159,12 @@ export default function Navbar() {
               ))}
               <div className="w-10/12 border-t my-2"></div>
               <Link
-                href="/account"
+                href={accountLink}
                 className="flex items-center gap-2"
                 onClick={() => setMenuOpen(false)}
               >
                 <CircleUser className="w-5 h-5" />
-                <p>Account</p>
+                <p>{accountLabel}</p>
               </Link>
               <Link
                 href="/cart"
