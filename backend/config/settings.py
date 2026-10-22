@@ -114,6 +114,13 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
 }
 
+# How long the login tokens last. The frontend gets a new access token
+# with the refresh token when it runs out.
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+}
+
 SPECTACULAR_SETTINGS = {
     'TITLE': 'ShopNow Backend API',
     'DESCRIPTION': 'REST API for products, carts, checkout, orders, payments, and reviews.',
