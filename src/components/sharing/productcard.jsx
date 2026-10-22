@@ -4,13 +4,12 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import Link from "next/link";
 import AddToCart from "@/components/sharing/addtocart";
+import { formatPrice } from "@/lib/api";
 
 export default function ProductCard({ product }) {
-
-
   return (
     <Card className="w-fit">
-      <Link href={`/products/${product.title.toLowerCase().replace(/\s+/g, "-")}-${product.id}`}>
+      <Link href={`/products/${product.slug}`}>
         <CardContent className="space-y-1">
           <div className="relative h-[300px] w-[250px]">
             <Image
@@ -25,19 +24,18 @@ export default function ProductCard({ product }) {
           <p className="text-sm font-light">{product.description}</p>
           <div className="flex gap-2 items-center">
             <div>
-              <Star className="w-4 h-4 inline fill-[#50BB42] stroke-[#50BB42]" />
-              <Star className="w-4 h-4 inline fill-[#50BB42] stroke-[#50BB42]" />
-              <Star className="w-4 h-4 inline fill-[#50BB42] stroke-[#50BB42]" />
-              <Star className="w-4 h-4 inline fill-[#50BB42] stroke-[#50BB42]" />
-              <Star className="w-4 h-4 inline fill-[#50BB42] stroke-[#50BB42]" />
+              {[1, 2, 3, 4, 5].map((number) => (
+                <Star key={number} className="w-4 h-4 inline fill-[#50BB42] stroke-[#50BB42]" />
+              ))}
             </div>
             <p>(172)</p>
           </div>
+          <p className="text-lg font-bold">{formatPrice(product.price)}</p>
         </CardContent>
       </Link>
       <CardFooter>
-    <AddToCart product={product} className="w-full" />
-</CardFooter>
+        <AddToCart product={product} className="w-full" />
+      </CardFooter>
     </Card>
   );
 }

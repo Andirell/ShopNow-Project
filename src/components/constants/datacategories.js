@@ -36,11 +36,11 @@ export const Categories = [
     },
     { 
       id: 5,
-      title: "Smartphone & Accessories",
-      href: "smartphone & accessories",
+      title: "Smart Home & Accessories",
+      href: "smart home & accessories",
       src: "https://res.cloudinary.com/dxekfksjf/image/upload/v1760574927/WhatsApp_Image_2025-10-16_at_01.29.25_6ce9b027_gbrt7p.jpg",
-      alt: "Smartphone & Accessories" ,
-      description: "Stay connected with the latest smartphones and accessories to enhance your mobile experience."
+      alt: "Smart Home & Accessories" ,
+      description: "Make your home smarter with hubs, lights, cameras and gadgets that work together."
     },
     { 
       id: 6,

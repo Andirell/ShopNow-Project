@@ -1,22 +1,35 @@
 "use client";
 
-import React from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { differentProducts } from "@/components/constants/product";
 import MaxwidthContainer from "@/components/sharing/maxwidth-container";
 import Image from "next/image";
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/cartcontext";
+import { getProduct, formatPrice } from "@/lib/api";
 
 export default function DealPage() {
   const { slug } = useParams();
   const { addToCart } = useCart();
 
-  const product = differentProducts.find((item) => {
-    const itemSlug = `${item.title.toLowerCase().replace(/\s+/g, "-")}-${item.id}`;
-    return itemSlug === slug;
-  });
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getProduct(slug).then((data) => {
+      setProduct(data);
+      setLoading(false);
+    });
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <MaxwidthContainer className="py-20 text-center">
+        <p className="text-gray-500">Loading...</p>
+      </MaxwidthContainer>
+    );
+  }
 
   if (!product) {
     return (
@@ -66,6 +79,7 @@ export default function DealPage() {
             <p className="text-sm sm:text-base md:text-lg text-gray-600">
               {product.description}
             </p>
+            <p className="text-2xl font-bold">{formatPrice(product.price)}</p>
 
             <Button
               onClick={handleAddToCart}

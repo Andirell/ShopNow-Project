@@ -1,12 +1,11 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import MaxwidthContainer from "../sharing/maxwidth-container";
 import Image from "next/image";
-import { differentProducts } from "../constants/product";
 import { Star } from "lucide-react";
 import Link from "next/link";
 import AddToCart from "@/components/sharing/addtocart";
 
-export default function FeaturedCollection() {
+export default function FeaturedCollection({ products }) {
   return (
     <section>
       <MaxwidthContainer className="py-10 md:py-16 lg:py-20 space-y-6 md:space-y-8 lg:space-y-10">
@@ -15,9 +14,9 @@ export default function FeaturedCollection() {
         </h2>
 
         <div className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide px-4 md:px-0">
-          {differentProducts.map((item, index) => (
-            <Card key={index} className="w-[280px] sm:w-[300px] md:w-[320px] lg:w-[350px] cursor-pointer transition-transform hover:scale-105 hover:shadow-lg rounded-2xl overflow-hidden flex-shrink-0">
-              <Link href={`/products/${item.title.toLowerCase().replace(/\s+/g, "-")}-${item.id}`}>
+          {products.map((item) => (
+            <Card key={item.id} className="w-[280px] sm:w-[300px] md:w-[320px] lg:w-[350px] cursor-pointer transition-transform hover:scale-105 hover:shadow-lg rounded-2xl overflow-hidden flex-shrink-0">
+              <Link href={`/products/${item.slug}`}>
                 <CardContent className="space-y-4 p-4 md:p-6">
                   <div className="relative w-full h-[200px] sm:h-[220px] md:h-[240px] lg:h-[260px] rounded-xl overflow-hidden">
                     <Image
