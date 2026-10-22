@@ -3,8 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/navigation/footer";
 import { CartProvider } from "@/contexts/cartcontext";
-
-
+import { AuthProvider } from "@/contexts/authcontext";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -13,20 +12,21 @@ const urbanist = Urbanist({
 });
 
 export const metadata = {
-  title: "My E-commerce App ",
-  description: "Created by DevAndi",
+  title: "ShopNow",
+  description: "Shop laptops, audio, cameras and smart home gadgets. Created by DevAndi",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${urbanist.className}  } antialiased`} >
-
-        <CartProvider>
-          < Navbar />
-          {children}
-          < Footer />
-        </CartProvider>
+      <body className={`${urbanist.className} antialiased`}>
+        <AuthProvider>
+          <CartProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </CartProvider>
+        </AuthProvider>
       </body>
     </html>
   );
