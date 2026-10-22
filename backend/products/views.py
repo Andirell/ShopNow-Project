@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from django.db.models import Q
+from django.db.models import ProtectedError, Q
 from rest_framework import permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -62,8 +62,24 @@ class ProductDetailView(APIView):
 
     def delete(self, request, product_id):
         product = self.get_object(product_id)
-        product.delete()
+        try:
+            product.delete()
+        except ProtectedError:
+            return Response(
+                {'detail': 'This product is in past orders, so it cannot be deleted. Set its stock to 0 instead.'},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class ProductBySlugView(APIView):
+    # The frontend links to products by slug, e.g. /products/ultraslim-laptop-x13-1
+    permission_classes = [permissions.AllowAny]
+    serializer_class = ProductSerializer
+
+    def get(self, request, slug):
+        product = get_object_or_404(Product.objects.select_related('category'), slug=slug)
+        return Response(ProductSerializer(product).data)
 
 
 class CategoryListCreateView(APIView):

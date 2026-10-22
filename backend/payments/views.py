@@ -1,10 +1,12 @@
 import uuid
 
+from django.db import transaction
 from django.shortcuts import get_object_or_404
 from rest_framework import permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from orders.models import Order
 from .models import Payment
 from .serializers import PaymentCreateSerializer, PaymentSerializer
 
@@ -47,21 +49,31 @@ class PaymentConfirmView(APIView):
     serializer_class = PaymentSerializer
 
     def post(self, request, payment_id):
-        payment = get_object_or_404(_payments_for_user(request.user), id=payment_id)
+        # Make sure the payment exists and belongs to this user first
+        get_object_or_404(_payments_for_user(request.user), id=payment_id)
 
-        if payment.status == 'successful':
-            return Response(PaymentSerializer(payment).data)
-        if payment.status != 'pending':
-            return Response(
-                {'detail': 'Only pending payments can be confirmed.'},
-                status=status.HTTP_400_BAD_REQUEST,
-            )
-        if payment.order.status == 'cancelled':
-            return Response(
-                {'detail': 'Cancelled orders cannot be paid.'},
-                status=status.HTTP_400_BAD_REQUEST,
-            )
+        with transaction.atomic():
+            # Lock the payment and its order so that if two confirm requests
+            # come in at the same time, the second one waits and then sees
+            # the payment is already done. Cancelling the order also locks
+            # the order row, so it can't be cancelled halfway through this.
+            payment = Payment.objects.select_for_update().get(id=payment_id)
+            order = Order.objects.select_for_update().get(id=payment.order_id)
 
-        transaction_id = request.data.get('transaction_id') or f'txn_{uuid.uuid4().hex}'
-        payment.mark_successful(transaction_id=transaction_id)
+            if payment.status == 'successful':
+                return Response(PaymentSerializer(payment).data)
+            if payment.status != 'pending':
+                return Response(
+                    {'detail': 'Only pending payments can be confirmed.'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            if order.status == 'cancelled':
+                return Response(
+                    {'detail': 'Cancelled orders cannot be paid.'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+
+            transaction_id = request.data.get('transaction_id') or f'txn_{uuid.uuid4().hex}'
+            payment.mark_successful(transaction_id=transaction_id)
+
         return Response(PaymentSerializer(payment).data)
